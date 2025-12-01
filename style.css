@@ -463,8 +463,14 @@ body {
 
 .testimonial-track {
   display: flex;
-  gap: 18px;
-  transition: transform 0.4s ease;
+  gap: 22px;
+  width: max-content;
+  animation: floatScroll 35s linear infinite;
+}
+
+@keyframes floatScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .testimonial-card {
