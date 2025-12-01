@@ -192,3 +192,25 @@ const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.dataset.target;
+      const current = +counter.innerText.replace("%", "");
+
+      const speed = 40; 
+      const increment = Math.ceil(target / speed);
+
+      if (current < target) {
+        counter.innerText = current + increment + "%";
+        setTimeout(updateCounter, 40);
+      } else {
+        counter.innerText = target + "%";
+      }
+    };
+
+    updateCounter();
+  });
+});
