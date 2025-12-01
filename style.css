@@ -456,28 +456,38 @@ body {
 
 /* Testimonials */
 
-.testimonial-slider {
-  position: relative;
+.testimonial-marquee {
   overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-.testimonial-track {
+.marquee-track {
   display: flex;
-  gap: 22px;
+  gap: 26px;
   width: max-content;
-  animation: floatScroll 35s linear infinite;
+  animation: marquee 38s linear infinite;
 }
 
-@keyframes floatScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .testimonial-card {
-  min-width: calc(100% / 3 - 12px);
-  max-width: calc(100% / 3 - 12px);
-  text-align: left;
+  min-width: 290px;
+  max-width: 290px;
+  background: rgba(255,255,255,0.90);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
 }
+
 
 .client-photo {
   width: 42px;
